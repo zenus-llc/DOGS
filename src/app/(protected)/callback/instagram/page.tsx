@@ -4,21 +4,30 @@ import React from 'react'
 
 type Props = {
   searchParams: {
-    code: string
+    code?: string
   }
 }
 
-const Page = async ({ searchParams: { code } }: Props) => {
-  if (code) {
-    console.log(code)
-    const user = await onIntegrate(code.split('#_')[0])
-    if (user.status === 200) {
-      return redirect(
-        `/dashboard/${user.data?.firstname}${user.data?.lastname}/integrations`
-      )
-    }
+const Page = async ({ searchParams }: Props) => {
+  const code = searchParams?.code
+  
+  if (!code) {
+    console.log('❌ No code provided in callback')
+    return redirect('/dashboard')
   }
-  return redirect('/sign-up')
+
+  console.log('✅ Instagram callback code:', code)
+  const cleanCode = code.split('#_')[0]
+  const user = await onIntegrate(cleanCode)
+  
+  if (user.status === 200) {
+    return redirect(
+      `/dashboard/${user.data?.firstname}${user.data?.lastname}/integrations`
+    )
+  }
+  
+  console.log('❌ Integration failed with status:', user.status)
+  return redirect('/dashboard')
 }
 
 export default Page
