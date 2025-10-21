@@ -69,17 +69,21 @@ export const generateTokens = async (code: string) => {
     console.log('🔵 [TOKEN] Redirect URI:', `${process.env.NEXT_PUBLIC_HOST_URL}/callback/instagram`)
     console.log('🔵 [TOKEN] Token URL:', process.env.INSTAGRAM_TOKEN_URL)
     
-    const insta_form = new FormData()
-    insta_form.append('client_id', process.env.INSTAGRAM_CLIENT_ID as string)
-    insta_form.append('client_secret', process.env.INSTAGRAM_CLIENT_SECRET as string)
-    insta_form.append('grant_type', 'authorization_code')
-    insta_form.append('redirect_uri', `${process.env.NEXT_PUBLIC_HOST_URL}/callback/instagram`)
-    insta_form.append('code', code)
+    // Instagram Business API uses URL-encoded form, not FormData
+    const params = new URLSearchParams()
+    params.append('client_id', process.env.INSTAGRAM_CLIENT_ID as string)
+    params.append('client_secret', process.env.INSTAGRAM_CLIENT_SECRET as string)
+    params.append('grant_type', 'authorization_code')
+    params.append('redirect_uri', `${process.env.NEXT_PUBLIC_HOST_URL}/callback/instagram`)
+    params.append('code', code)
 
-    console.log('🔵 [TOKEN] Requesting short-lived token from Instagram...')
+    console.log('🔵 [TOKEN] Requesting access token from Instagram Business API...')
     const shortTokenRes = await fetch(process.env.INSTAGRAM_TOKEN_URL as string, {
       method: 'POST',
-      body: insta_form,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: params.toString(),
     })
 
     console.log('🔵 [TOKEN] Response status:', shortTokenRes.status, shortTokenRes.statusText)
