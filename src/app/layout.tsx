@@ -10,8 +10,8 @@ import ReduxProvider from '@/providers/redux-provider'
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Slide',
-  description: 'Automate DMs and comments on instagram',
+  title: 'Echelon',
+  description: 'Elevate your Instagram presence with AI-powered automation for DMs and comments',
 }
 
 export default function RootLayout({
