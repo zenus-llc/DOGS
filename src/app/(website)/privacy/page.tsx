@@ -240,7 +240,7 @@ export default function PrivacyPage() {
 
             <Card className="bg-white/5 backdrop-blur-sm border-white/10 mb-8">
               <CardHeader>
-                <CardTitle className="text-2xl text-white">8. Children's Privacy</CardTitle>
+                <CardTitle className="text-2xl text-white">8. Children&apos;s Privacy</CardTitle>
               </CardHeader>
               <CardContent className="text-gray-400 space-y-4">
                 <p>
@@ -274,7 +274,7 @@ export default function PrivacyPage() {
                   We may update this Privacy Policy from time to time. When we make significant changes, we will:
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Update the "Last updated" date at the top of this policy</li>
+                  <li>Update the &quot;Last updated&quot; date at the top of this policy</li>
                   <li>Notify you via email or in-app notification</li>
                   <li>Provide a summary of key changes</li>
                 </ul>
@@ -312,7 +312,7 @@ export default function PrivacyPage() {
               Your Privacy Matters
             </h2>
             <p className="text-gray-400 mb-8">
-              We're committed to protecting your data and being transparent about our practices.
+              We&apos;re committed to protecting your data and being transparent about our practices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/support">

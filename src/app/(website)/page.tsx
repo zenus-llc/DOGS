@@ -152,7 +152,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              Transform every comment and DM into meaningful connections. Echelon's AI-powered automation helps you engage authentically, at scale.
+              Transform every comment and DM into meaningful connections. Echelon&apos;s AI-powered automation helps you engage authentically, at scale.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">

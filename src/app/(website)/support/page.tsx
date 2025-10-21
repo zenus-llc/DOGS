@@ -21,16 +21,8 @@ import Link from 'next/link'
 export default function SupportPage() {
   const faqs = [
     {
-      question: 'How does Echelon's automation work?',
-      answer: 'Echelon uses advanced AI to analyze incoming comments and DMs on your Instagram account, then generates contextual, human-like responses based on your brand voice and custom settings. You maintain full control over what gets automated.',
-    },
-    {
       question: 'Is my Instagram account safe?',
       answer: 'Absolutely. We use OAuth 2.0 authentication and bank-level encryption. We never store your Instagram password, and you can revoke access at any time. Our platform is compliant with Instagram\'s API terms of service.',
-    },
-    {
-      question: 'Can I customize the automated responses?',
-      answer: 'Yes! You can create custom response templates, set up keyword triggers, and train the AI to match your brand voice. Our Pro plan includes advanced AI customization options for even more control.',
     },
     {
       question: 'What happens if I exceed my plan limits?',
